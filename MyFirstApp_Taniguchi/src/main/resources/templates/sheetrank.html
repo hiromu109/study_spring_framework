@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h2>＜ランキング一覧＞</h2>
+	<table>
+		<tr>
+			<th>順位</th>
+			<th>名前</th>
+		</tr>
+		<tr>
+			<td>
+				<p th:text="${session.rank0}"></p>
+			</td>
+			<td>
+				<p th:text=${session.rankn0}></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p th:text="${session.rank1}"></p>
+			</td>
+			<td>
+				<p th:text=${session.rankn1}></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p th:text="${session.rank2}"></p>
+			</td>
+			<td>
+				<p th:text=${session.rankn2}></p>
+			</td>
+		</tr>
+
+	</table>
+	<a href="http://localhost:8080/reservmy">マイページ</a>
+	<a href="http://localhost:8080/sheetreserv">予約</a>
+	<a href="http://localhost:8080/reservmodify">編集、削除をする</a>
+
+</body>
+
+</html>

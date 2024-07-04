@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<h4>DB連携！</h4>
+
+	<h3>ペアプロ！</h3>
+
+	<h4>A-1全てのデータを表示しよう</h4>
+	画面最下部の「検索結果」の部分に全部のデータが表示されるようにしてね。
+	<hr>
+
+	【データ検索】検索情報を入力してね<br>
+
+	<form th:action="@{/fourthpraSer}" method="POST">
+
+		検索する資格名<input type="text" name="sername">
+
+		<input type="submit">
+	</form>
+	<br>
+
+	【データ登録】登録情報を入力してね<br>
+	<form th:action="@{/fourthpraIns}" method="POST">
+
+		資格名<input type="text" name="cername"><br>
+
+		資格ランク<input type="text" name="cerrank">
+
+		<input type="submit">
+	</form>
+	<br>
+
+	【データ更新】更新情報を入力してね<br>
+	<form th:action="@{/fourthpraUpd}" method="POST">
+
+		資格名<input type="text" name="cername"><br>
+
+		変えたい資格ランク<input type="text" name="cerrank">
+
+		<input type="submit">
+	</form>
+	<br>
+
+	【データ削除】削除情報を入力してね<br>
+	<form th:action="@{/fourthpraDel}" method="POST">
+
+		資格名<input type="text" name="cername">
+		<input type="submit">
+	</form>
+	<br>
+
+	<h4>↓検索結果↓</h4>
+	<table>
+		<tr>
+			<th>資格名</th>
+			<th>資格ランク</th>
+		</tr>
+		<tr th:each="singledata:${kensakupra}">
+			<td>
+				<p th:text=${singledata.sikakuname}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.sikakurank}></p>
+			</td>
+		</tr>
+
+	</table>
+
+</body>
+
+</html>

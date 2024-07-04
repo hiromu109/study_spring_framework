@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<th:block th:if="${session.out == 'outt'}">
+		<script type="text/javascript" src="js/work.js"></script>
+	</th:block>
+	進級プログラム<br>
+	<form th:action="@{/classupd}" method="POST">
+		変更前のクラスを入力して下さい<input type="text" name="bef"><br>
+		変更後のクラスを入力して下さい<input type="text" name="aft"><br>
+		<input type="submit" value="実行">
+	</form>
+
+＜検索＞<br>
+	<form th:action="@{/classser}" method="POST">
+	検索<input type="text" name="ser"><br>
+		<input type="submit" value="実行">
+	</form>
+<table>
+		<tr>
+			<th>名前</th>
+			<th>クラス</th>
+			<th>生徒番号</th>
+
+		</tr>
+		<tr th:each="singledata:${kensakupra}">
+			<td>
+				<p th:text=${singledata.user_name}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.class}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.student_no}></p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

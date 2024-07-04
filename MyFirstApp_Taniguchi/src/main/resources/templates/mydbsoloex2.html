@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<th:block th:if="${sosa == '予約'}">
+		<h4>【予約登録】</h4>
+		<form th:action="@{/soloexIns}" method="POST">
+			予約日<input type="text" name="yoyakubi"><br>
+			予約クラス<input type="text" name="yoyakuclass"><br>
+			予約者<input type="text" name="yoyakuname"><br>
+			予約コート<input type="text" name="yoyakucoat">
+			<input type="submit">
+		</form>
+	</th:block>
+	
+<th:block th:if="${sosa == '変更'}">
+	<h4>【予約変更】</h4>
+	<form th:action="@{/soloexUpd}" method="POST">
+		予約日<input type="text" name="yoyakubi"><br>
+		登録者<input type="text" name="yoyakuname"><br>
+		変更後の予約日<input type="text" name="yoyakubiaf">
+		<input type="submit">
+	</form>
+	</th:block>
+	
+<th:block th:if="${sosa == '削除'}">
+	<h4>【予約取り消し】</h4>
+	<form th:action="@{/soloexDel}" method="POST">
+		予約日<input type="text" name="yoyakubi"><br>
+		登録者<input type="text" name="yoyakuname">
+		<input type="submit">
+	</form>
+	</th:block>
+
+</body>
+
+</html>

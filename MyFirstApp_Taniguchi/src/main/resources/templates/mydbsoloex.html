@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<h3>国際理工ドーム予約アプリ</h3>
+	<p th:if="${era != null}">
+		<h1>既に予約されています</h1>
+		</p>
+	<h4>【予約状況】</h4>
+	<table>
+		<tr>
+			<th>予約日</th>
+			<th>予約クラス</th>
+			<th>予約者</th>
+			<th>予約コート</th>
+		</tr>
+		<tr th:each="singledata:${kensakupra}">
+			<td>
+				<p th:text=${singledata.yoyakubi}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.yoyakuclass}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.yoyakuname}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.yoyakucoat}></p>
+			</td>
+		</tr>
+	</table>
+	<hr>
+操作を入力して下さい(予約、変更、削除)
+	<form th:action="@{/soloexSosa}" method="POST">
+		<input type="text" name="sosa">
+		<input type="submit" value="実行">
+	</form>
+</body>
+
+</html>

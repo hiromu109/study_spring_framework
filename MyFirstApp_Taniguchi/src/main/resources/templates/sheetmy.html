@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<h3>マイページ</h3>
+
+	<h4>＜ユーザー名＞</h4>
+	<a th:text="${usename}"></a>
+	<hr>
+	<h4>＜予約履歴＞</h4>
+	<table>
+		<tr>
+			<th>予約番号</th>
+			<th>予約日</th>
+			<th>予約者名</th>
+		</tr>
+		<tr th:each="singledata:${kensakupra}">
+			<td>
+				<p th:text=${singledata.yoyakubango}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.yoyakubi}></p>
+			</td>
+			<td>
+				<p th:text=${singledata.yoyakuname}></p>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<h4>＜予約回数＞</h4>
+	<a th:text="${count}">回</a>
+	<hr>
+	<h4>＜ユーザーランク＞</h4>
+	<a th:text="${rank}"></a>
+	<hr>
+	<a href="http://localhost:8080/reservrank">ランキング</a>
+	<a href="http://localhost:8080/sheetreserv">予約</a>
+	<a href="http://localhost:8080/reservmodify">編集、削除をする</a>
+</body>
+
+</html>

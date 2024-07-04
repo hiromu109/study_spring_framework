@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h3>第3回制作課題</h3>
+
+	<h4>＜変更情報を入力してください＞</h4>
+	<form th:action="@{/sheetUpd}" method="POST">
+		指定する予約番号<input type="text" name="yoyakubango"><br>
+		<input type="submit">
+	</form>
+	<h4>【予約取り消し】</h4>
+	<form th:action="@{/sheetDel}" method="POST">
+		予約番号<input type="text" name="yoyakubango"><br>
+		<input type="submit">
+	</form>
+	
+	<a href="http://localhost:8080/sheetreserv">戻る</a>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h4>第12回 とにかく復習が大事です。</h4>
+	<h4>A1問題</h4>
+	<p th:text="${modelData}"></p>
+	<ul>
+		<li th:each="itema: ${resultList}">
+			<p th:text="${itema}"></p>
+		</li>
+	</ul>
+	<h4>A2問題</h4>
+	<p th:text="${session.sessionData}"></p>
+	<hr>
+	<h4>B1問題</h4>
+		<form th:action="@{/twelvethpage}" method="POST">
+			<input type="text" name="text">
+			<input type="submit" value="送信">
+		</form>
+		
+	<h4>B2問題</h4>
+	<hr>
+	<h4>↓個別練習問題↓</h4>
+	<a>①</a>
+	<p th:text="${modelPra1}"></p>
+		<a>②,③</a>
+	<ul>
+		<li th:each="pra2: ${listpra}">
+			<th:block th:if="${pra2 == '2件目だよ'|| pra2=='4件目だよ'}">
+				<p>偶数だよ</p>
+			</th:block>
+			<th:block th:if="${pra2 == '1件目だよ'|| pra2=='3件目だよ'}">
+				<p th:text="${pra2}"></p>
+			</th:block>
+		</li>
+	</ul>
+	
+	<th:block th:if="${listpra == '2個目'}">
+		<h6>sample2の値は「2個目」でした。</h6>
+</body>
+</html>

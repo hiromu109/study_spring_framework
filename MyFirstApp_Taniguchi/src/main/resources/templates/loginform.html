@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="css/kadai.css">
+<style>
+	.q{
+	border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    padding: 5px 10px;
+    background-color: lightskyblue;
+	}
+</style>	
+</head>
+
+<body>
+<form th:action="@{/userLogin}" method="POST">
+	ID　　　　 <input type="text" name="id" class="q"><br>
+	パスワード <input type="text" name="pass" class="q"><br>
+	<input type="submit" value="ログイン">
+</form>
+</body>
+<p th:text="${uu}"></p>
+</html>

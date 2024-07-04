@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="css/kadai.css">
+	<script type="text/javascript" src="js/kadai.js"></script>
+</head>
+
+<body>
+	ようこそ<a th:text="${uu}"></a>さん<br>
+	つぶやく<br>
+<form th:action="@{/userHome}" method="POST">
+	<input type="text" name="tweet">
+	<input type="submit" value="投稿">
+</form>
+<p th:text="${uu}"></p>
+<a href="http://localhost:8080/userLogin">ログイン画面</a>
+</body>
+
+</html>

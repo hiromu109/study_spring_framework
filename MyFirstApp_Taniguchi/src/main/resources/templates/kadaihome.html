@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>座席予約システム</title>
+</head>
+
+<body>
+	操作を入力して下さい
+	<form th:action="@{/zasekiyoyaku}" method="POST">
+		<input type="text" name="sosa">
+		<input type="submit" value="実行">
+	</form>
+	<th:block th:if="${kabu == 'kaburi'}">
+		<script type="text/javascript" src="js/seckadai.js"></script>
+	</th:block>
+	<th:block th:if="${sosa == '予約'}">
+		<p>予約したい座席番号を1～10で入力して下さい</p>
+		<form th:action="@{/zasekiyoyaku}" method="POST">
+			<input type="text" name="tuki" placeholder="予約月を入力して下さい">
+			<input type="text" name="num" placeholder="座席番号を入力して下さい">
+			<input type="submit" value="予約">
+		</form>
+	</th:block>
+	<th:block th:if="${sosa == '参照'}">
+		<p>現在の予約状況</p>
+		<p>
+			<予約済>
+		</p>
+		<th:block th:if="${session.a0 != null}">
+			<p th:text="${session.a0}"></p>
+		</th:block>
+		<th:block th:if="${session.a1 != null}">
+			<p th:text="${session.a1}"></p>
+		</th:block>
+		<th:block th:if="${session.a2 != null}">
+			<p th:text="${session.a2}"></p>
+		</th:block>
+		<th:block th:if="${session.a3 != null}">
+			<p th:text="${session.a3}"></p>
+		</th:block>
+		<th:block th:if="${session.a4 != null}">
+			<p th:text="${session.a4}"></p>
+		</th:block>
+		<th:block th:if="${session.a5 != null}">
+			<p th:text="${session.a5}"></p>
+		</th:block>
+		<th:block th:if="${session.a6 != null}">
+			<p th:text="${session.a6}"></p>
+		</th:block>
+		<th:block th:if="${session.a7 != null}">
+			<p th:text="${session.a7}"></p>
+		</th:block>
+		<th:block th:if="${session.a8 != null}">
+			<p th:text="${session.a8}"></p>
+		</th:block>
+		<th:block th:if="${session.a9 != null}">
+			<p th:text="${session.a9}"></p>
+		</th:block>
+	</th:block>
+
+	<th:block th:if="${sosa == 'まとめて予約'}">
+		<p>予約したい座席番号の範囲を1～10で入力して下さい</p>
+		<form th:action="@{/zasekiyoyaku}" method="POST">
+			<input type="text" name="mato1"> <input type="text" name="mato2">
+			<input type="submit" value="予約">
+		</form>
+	</th:block>
+
+	<th:block th:if="${sosa == '取り消し'}">
+		<p>取り消したい座席番号を1～10で入力して下さい</p>
+		<form th:action="@{/zasekiyoyaku}" method="POST">
+			<input type="text" name="kesu">
+			<input type="submit" value="削除">
+		</form>
+	</th:block>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	検索するデータを入力してね
+	<form th:action="@{/mydbsecondsou}" method="POST">
+		概要<input type="text" name="searchGai">
+		<input type="submit">
+	</form>
+	<br>
+	
+	<h4>↓検索結果↓</h4>
+	<table>
+		<tr>
+			<th>概要</th>
+			<th>説明</th>
+		</tr>
+		<tr th:each="singledata:${kensakupraSecond}">
+			<td><p th:text=${singledata.gaiyo}></p></td>
+			<td><p th:text=${singledata.setumei}></p></td>
+		</tr>
+	</table>
+	
+	<hr>
+	<h5>データ登録</h5>
+	【データ登録】登録するデータを入力してね。
+	<form th:action="@{/mydbsecondsouIns}" method="POST">
+		概要<input type="text" name="inputGai">
+		説明<input type="text" name="inputSetu">
+		<input type="submit">
+	</form>
+</body>
+
+</html>
